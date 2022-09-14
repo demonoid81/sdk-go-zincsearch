@@ -43,7 +43,7 @@ type MetaQuery struct {
 	// simple, TermQuery
 	Term *map[string]MetaTermQuery `json:"term,omitempty"`
 	// .
-	Terms *map[string]MetaTermsQuery `json:"terms,omitempty"`
+	Terms *MetaTermsQuery `json:"terms,omitempty"`
 	// simple, WildcardQuery
 	Wildcard *map[string]MetaWildcardQuery `json:"wildcard,omitempty"`
 }
@@ -610,9 +610,9 @@ func (o *MetaQuery) SetTerm(v map[string]MetaTermQuery) {
 }
 
 // GetTerms returns the Terms field value if set, zero value otherwise.
-func (o *MetaQuery) GetTerms() map[string]MetaTermsQuery {
+func (o *MetaQuery) GetTerms() MetaTermsQuery {
 	if o == nil || o.Terms == nil {
-		var ret map[string]MetaTermsQuery
+		var ret MetaTermsQuery
 		return ret
 	}
 	return *o.Terms
@@ -620,7 +620,7 @@ func (o *MetaQuery) GetTerms() map[string]MetaTermsQuery {
 
 // GetTermsOk returns a tuple with the Terms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MetaQuery) GetTermsOk() (*map[string]MetaTermsQuery, bool) {
+func (o *MetaQuery) GetTermsOk() (*MetaTermsQuery, bool) {
 	if o == nil || o.Terms == nil {
 		return nil, false
 	}
@@ -637,7 +637,7 @@ func (o *MetaQuery) HasTerms() bool {
 }
 
 // SetTerms gets a reference to the given map[string]map[string]interface{} and assigns it to the Terms field.
-func (o *MetaQuery) SetTerms(v map[string]MetaTermsQuery) {
+func (o *MetaQuery) SetTerms(v MetaTermsQuery) {
 	o.Terms = &v
 }
 

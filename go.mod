@@ -1,4 +1,4 @@
-module github.com/demomoid81/sdk-go-zincsearch
+module github.com/demonoid81/sdk-go-zincsearch
 
 go 1.13
 

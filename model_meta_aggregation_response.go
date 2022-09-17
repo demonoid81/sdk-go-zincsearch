@@ -23,7 +23,7 @@ type BucketsValue struct {
 // MetaAggregationResponse struct for MetaAggregationResponse
 type MetaAggregationResponse struct {
 	// slice or map
-	Buckets map[string][]BucketsValue `json:"buckets,omitempty"`
+	Buckets []*BucketsValue `json:"buckets,omitempty"`
 	// support for auto_date_histogram_aggregation
 	Interval *string `json:"interval,omitempty"`
 	Value map[string]interface{} `json:"value,omitempty"`

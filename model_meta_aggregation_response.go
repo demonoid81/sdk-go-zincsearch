@@ -47,9 +47,9 @@ func NewMetaAggregationResponseWithDefaults() *MetaAggregationResponse {
 }
 
 // GetBuckets returns the Buckets field value if set, zero value otherwise.
-func (o *MetaAggregationResponse) GetBuckets() map[string][]BucketsValue {
+func (o *MetaAggregationResponse) GetBuckets() []*BucketsValue {
 	if o == nil || o.Buckets == nil {
-		var ret map[string][]BucketsValue
+		var ret []*BucketsValue
 		return ret
 	}
 	return o.Buckets
@@ -57,7 +57,7 @@ func (o *MetaAggregationResponse) GetBuckets() map[string][]BucketsValue {
 
 // GetBucketsOk returns a tuple with the Buckets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MetaAggregationResponse) GetBucketsOk() (map[string][]BucketsValue, bool) {
+func (o *MetaAggregationResponse) GetBucketsOk() ([]*BucketsValue, bool) {
 	if o == nil || o.Buckets == nil {
 		return nil, false
 	}
@@ -74,7 +74,7 @@ func (o *MetaAggregationResponse) HasBuckets() bool {
 }
 
 // SetBuckets gets a reference to the given map[string]interface{} and assigns it to the Buckets field.
-func (o *MetaAggregationResponse) SetBuckets(v map[string][]BucketsValue) {
+func (o *MetaAggregationResponse) SetBuckets(v []*BucketsValue) {
 	o.Buckets = v
 }
 

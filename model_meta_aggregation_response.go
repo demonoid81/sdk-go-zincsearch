@@ -14,16 +14,10 @@ import (
 	"encoding/json"
 )
 
-type BucketsValue struct {
-	DocCount    int    `json:"doc_count,omitempty"`
-	Key         int    `json:"key,omitempty"`
-	KeyAsString string `json:"key_as_string,omitempty"`
-}
-
 // MetaAggregationResponse struct for MetaAggregationResponse
 type MetaAggregationResponse struct {
 	// slice or map
-	Buckets []*BucketsValue `json:"buckets,omitempty"`
+	Buckets []interface{} `json:"buckets,omitempty"`
 	// support for auto_date_histogram_aggregation
 	Interval *string `json:"interval,omitempty"`
 	Value map[string]interface{} `json:"value,omitempty"`
@@ -47,9 +41,9 @@ func NewMetaAggregationResponseWithDefaults() *MetaAggregationResponse {
 }
 
 // GetBuckets returns the Buckets field value if set, zero value otherwise.
-func (o *MetaAggregationResponse) GetBuckets() []*BucketsValue {
+func (o *MetaAggregationResponse) GetBuckets() []interface{} {
 	if o == nil || o.Buckets == nil {
-		var ret []*BucketsValue
+		var ret []interface{}
 		return ret
 	}
 	return o.Buckets
@@ -57,7 +51,7 @@ func (o *MetaAggregationResponse) GetBuckets() []*BucketsValue {
 
 // GetBucketsOk returns a tuple with the Buckets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MetaAggregationResponse) GetBucketsOk() ([]*BucketsValue, bool) {
+func (o *MetaAggregationResponse) GetBucketsOk() ([]interface{}, bool) {
 	if o == nil || o.Buckets == nil {
 		return nil, false
 	}
@@ -74,7 +68,7 @@ func (o *MetaAggregationResponse) HasBuckets() bool {
 }
 
 // SetBuckets gets a reference to the given map[string]interface{} and assigns it to the Buckets field.
-func (o *MetaAggregationResponse) SetBuckets(v []*BucketsValue) {
+func (o *MetaAggregationResponse) SetBuckets(v []interface{}) {
 	o.Buckets = v
 }
 
